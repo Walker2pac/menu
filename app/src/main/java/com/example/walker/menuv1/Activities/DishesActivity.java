@@ -33,7 +33,7 @@ public class DishesActivity extends Activity {
     private ArrayList<Category> categoryList;
     private ArrayList<Dish> dishList;
     private GridLayoutManager lLayout;
-    public static final String status = "status";
+    public static final String categoryIdField = "categoryId";
 
     private RealmResults<Dish> dishes;
     private Realm realm;
@@ -65,7 +65,7 @@ public class DishesActivity extends Activity {
         //Загрузка данных в массив из локальной БД Realm
         Intent intent = getIntent();
         int categoryId = intent.getIntExtra(CategoryId, 0);
-        dishes = realm.where(Dish.class).equalTo(status, categoryId).findAll();
+        dishes = realm.where(Dish.class).equalTo(categoryIdField, categoryId).findAll();
 
         /* НУЖНО НА СЕРВЕР ДОБАВИТЬ ПОЛЕ menuId, которая будет хранить в себе int
         и показывать к какому меню относится. На клиенте с помощью putExtra нужно ложить menuId

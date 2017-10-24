@@ -34,9 +34,12 @@ public class Category extends RealmObject {
     @SerializedName("weight")
     @Expose
     private Integer weight;
-    @SerializedName("status")
+    @SerializedName("menuId")
     @Expose
-    private Integer status;
+    private Integer menuId;
+    @SerializedName("menu")
+    @Expose
+    private Integer menu;
     @SerializedName("dishes")
     @Expose
     private RealmList<Dish> dishes = new RealmList<Dish>();
@@ -44,7 +47,7 @@ public class Category extends RealmObject {
     public Category() {
     }
 
-    public Category(Integer id, String titleRu, String titleEng, String url, String imageUrl, Integer weight, Integer status, RealmList<Dish> dishes) {
+    public Category(Integer id, String titleRu, String titleEng, String url, String imageUrl, Integer weight, Integer menuId, Integer menu, RealmList<Dish> dishes) {
         super();
         this.id = id;
         this.titleRu = titleRu;
@@ -52,7 +55,8 @@ public class Category extends RealmObject {
         this.url = url;
         this.imageUrl = imageUrl;
         this.weight = weight;
-        this.status = status;
+        this.menuId = menuId;
+        this.menu = menu;
         this.dishes = dishes;
     }
 
@@ -104,12 +108,20 @@ public class Category extends RealmObject {
         this.weight = weight;
     }
 
-    public Integer getStatus() {
-        return status;
+    public Integer getMenuId() {
+        return menuId;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setMenuId(Integer menuId) {
+        this.menuId = menuId;
+    }
+
+    public Integer getMenu() {
+        return menu;
+    }
+
+    public void setMenu(Integer menu) {
+        this.menu = menu;
     }
 
     public List<Dish> getDishes() {
@@ -122,7 +134,7 @@ public class Category extends RealmObject {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("id", id).append("titleRu", titleRu).append("titleEng", titleEng).append("url", url).append("imageUrl", imageUrl).append("weight", weight).append("status", status).append("dishes", dishes).toString();
+        return new ToStringBuilder(this).append("id", id).append("titleRu", titleRu).append("titleEng", titleEng).append("url", url).append("imageUrl", imageUrl).append("weight", weight).append("menuId", menuId).append("menu", menu).append("dishes", dishes).toString();
     }
 }
 

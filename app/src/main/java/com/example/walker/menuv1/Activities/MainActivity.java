@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                         Category categoryRealm = realm.createObject(Category.class);
                         categoryRealm.setTitleRu(categoryList.get(i).getTitleRu());
                         categoryRealm.setTitleEng(categoryList.get(i).getTitleEng());
-                        categoryRealm.setStatus(categoryList.get(i).getStatus());
+                        categoryRealm.setMenuId(categoryList.get(i).getMenuId());
                         categoryRealm.setUrl(categoryList.get(i).getUrl());
                         categoryRealm.setWeight(categoryList.get(i).getWeight());
                         categoryRealm.setImageUrl(categoryList.get(i).getImageUrl());
@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                         Dish dishRealm = realm.createObject(Dish.class);
                         dishRealm.setTitleRu(dishList.get(i).getTitleRu());
                         dishRealm.setTitleEng(dishList.get(i).getTitleEng());
-                        dishRealm.setStatus(dishList.get(i).getStatus());
+                        dishRealm.setCategoryId(dishList.get(i).getCategoryId());
                         dishRealm.setUrl(dishList.get(i).getUrl());
                         dishRealm.setWeight(dishList.get(i).getWeight());
                         dishRealm.setImgUrl(dishList.get(i).getImgUrl());

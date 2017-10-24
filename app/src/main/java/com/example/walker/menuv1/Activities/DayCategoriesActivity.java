@@ -30,7 +30,7 @@ public class DayCategoriesActivity extends Activity {
     private ArrayList<Category> categoryList;
     private ArrayList<Dish> dishList;
     private GridLayoutManager lLayout;
-    public static final String status = "status";
+    public static final String menu = "menuId";
 
     private RealmResults<Category> categories;
     private Realm realm;
@@ -60,13 +60,14 @@ public class DayCategoriesActivity extends Activity {
         Log.d(DEBUG, "Я в onCreate");
 
         //Загрузка данных в массив из локальной БД Realm
-        categories = realm.where(Category.class).equalTo(status, 1).findAll();
+        categories = realm.where(Category.class).equalTo(menu, 1).findAll();
 
         /* НУЖНО НА СЕРВЕР ДОБАВИТЬ ПОЛЕ menuId, которая будет хранить в себе int
         и показывать к какому меню относится. На клиенте с помощью putExtra нужно ложить menuId
         и подставлять menuId в findALl Realm  */
 
         Log.d(DEBUG, "я после загрузки данных в массив из локальной БД");
+        Log.d(DEBUG, categories.get(0).getTitleRu() + "это titleRu");
         initRecyclerView();
 
     }

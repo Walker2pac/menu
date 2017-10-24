@@ -21,7 +21,7 @@ public class RecyclerViewCategoryHolders extends RecyclerView.ViewHolder impleme
     public TextView titleEng;
     public ImageView categoryImage;
     private Context context;
-    public static final String CategoryId = null;
+    public static final String CategoryId = "CATEGORY_ID";
 
     public RecyclerViewCategoryHolders(View itemView) {
         super(itemView);

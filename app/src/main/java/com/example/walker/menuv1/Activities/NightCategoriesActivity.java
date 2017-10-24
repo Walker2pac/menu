@@ -20,7 +20,6 @@ import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 
 import static com.example.walker.menuv1.Activities.DayCategoriesActivity.DEBUG;
-import static com.example.walker.menuv1.Activities.DayCategoriesActivity.status;
 
 /**
  * Created by walker on 27.09.2017.
@@ -36,6 +35,8 @@ public class NightCategoriesActivity extends Activity {
     private RealmResults<Category> categories;
     private Realm realm;
     private RealmConfiguration realmConfiguration;
+
+    public String status = "status";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

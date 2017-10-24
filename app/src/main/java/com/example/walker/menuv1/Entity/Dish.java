@@ -37,9 +37,9 @@ public class Dish extends RealmObject {
     @SerializedName("weight")
     @Expose
     private Integer weight;
-    @SerializedName("status")
+    @SerializedName("categoryId")
     @Expose
-    private Integer status;
+    private Integer categoryId;
 
     /**
      * No args constructor for use in serialization
@@ -55,12 +55,12 @@ public class Dish extends RealmObject {
      * @param id
      * @param titleRu
      * @param weight
-     * @param status
+     * @param categoryId
      * @param titleEng
      * @param url
      * @param descriptionEng
      */
-    public Dish(Integer id, String titleRu, String titleEng, String descriptionRu, String descriptionEng, String url, String imgUrl, Integer weight, Integer status) {
+    public Dish(Integer id, String titleRu, String titleEng, String descriptionRu, String descriptionEng, String url, String imgUrl, Integer weight, Integer categoryId) {
         super();
         this.id = id;
         this.titleRu = titleRu;
@@ -70,7 +70,7 @@ public class Dish extends RealmObject {
         this.url = url;
         this.imgUrl = imgUrl;
         this.weight = weight;
-        this.status = status;
+        this.categoryId = categoryId;
     }
 
     public Integer getId() {
@@ -137,17 +137,17 @@ public class Dish extends RealmObject {
         this.weight = weight;
     }
 
-    public Integer getStatus() {
-        return status;
+    public Integer getCategoryId() {
+        return categoryId;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
     }
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("id", id).append("titleRu", titleRu).append("titleEng", titleEng).append("descriptionRu", descriptionRu).append("descriptionEng", descriptionEng).append("url", url).append("imgUrl", imgUrl).append("weight", weight).append("status", status).toString();
+        return new ToStringBuilder(this).append("id", id).append("titleRu", titleRu).append("titleEng", titleEng).append("descriptionRu", descriptionRu).append("descriptionEng", descriptionEng).append("url", url).append("imgUrl", imgUrl).append("weight", weight).append("categoryId", categoryId).toString();
     }
 
 

@@ -11,7 +11,7 @@ import retrofit2.http.GET;
 
 public interface ApiServiceMenu {
 
-    @GET("tubeserver2/menu")
+    @GET("tubetest2/menu")
     Call<List<com.example.walker.menuv1.Entity.Menu>> getMyJSON();
 
 }
