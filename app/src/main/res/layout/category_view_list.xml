@@ -14,11 +14,11 @@
 
         <ImageView
             android:id="@+id/imageViewCategory"
-            android:layout_width="200dp"
-            android:layout_height="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:contentDescription="@string/action_settings"
             android:src="@drawable/three"
-            android:scaleType="fitCenter" />
+             />
 
         <TextView
             android:id="@+id/textViewTitleRu"

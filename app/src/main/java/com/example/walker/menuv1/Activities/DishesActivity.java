@@ -58,7 +58,7 @@ public class DishesActivity extends Activity {
         categoryList = new ArrayList<>();
         dishList = new ArrayList<>();
 
-        lLayout = new GridLayoutManager(DishesActivity.this, 4);
+        lLayout = new GridLayoutManager(DishesActivity.this, 2);
 
         Log.d(DEBUG, "Я в onCreate");
 

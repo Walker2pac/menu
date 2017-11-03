@@ -26,6 +26,7 @@ public class RecyclerViewDishHolders extends RecyclerView.ViewHolder implements 
         titleRu = (TextView)itemView.findViewById(R.id.textViewTitleRu);
         titleEng = (TextView)itemView.findViewById(R.id.textViewTitleEng);
         categoryImage = (ImageView)itemView.findViewById(R.id.imageViewCategory);
+        categoryImage.setAdjustViewBounds(true);
         context = itemView.getContext();
     }
 

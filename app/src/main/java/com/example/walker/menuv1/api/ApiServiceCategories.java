@@ -13,7 +13,7 @@ import retrofit2.http.GET;
 
 public interface ApiServiceCategories {
 
-    @GET("tubetest2/categories")
+    @GET("vpstubeserver/categories")
     Call<List<Category>> getMyJSON();
 
 }

@@ -15,6 +15,7 @@ import com.example.walker.menuv1.ViewHolders.RecyclerViewDishHolders;
 import java.util.List;
 
 import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
+import static com.example.walker.menuv1.Activities.DayCategoriesActivity.DEBUG;
 
 /**
  * Created by walker on 02.10.2017.
@@ -43,6 +44,7 @@ public class RecyclerViewDishAdapter extends RecyclerView.Adapter<RecyclerViewDi
         holder.titleRu.setText(itemList.get(position).getTitleRu());
         holder.titleEng.setText(itemList.get(position).getTitleEng());
         Glide.with(context).load(itemList.get(position).getImgUrl()).into(holder.categoryImage);
+        Log.d(DEBUG, itemList.get(position).getImgUrl());
     }
 
     @Override

@@ -40,6 +40,7 @@ public class RecyclerViewCategoryAdapter extends RecyclerView.Adapter<RecyclerVi
         holder.titleRu.setText(itemList.get(position).getTitleRu());
         holder.titleEng.setText(itemList.get(position).getTitleEng());
         Glide.with(context).load(itemList.get(position).getImageUrl()).into(holder.categoryImage);
+        holder.categoryImage.setAdjustViewBounds(true);
     }
 
     @Override
