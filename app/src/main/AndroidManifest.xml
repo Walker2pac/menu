@@ -23,6 +23,7 @@
         <activity android:name=".Activities.DayCategoriesActivity"></activity>
         <activity android:name=".Activities.NightCategoriesActivity"></activity>
         <activity android:name=".Activities.DishesActivity"></activity>
+        <activity android:name=".Activities.DishActivity"></activity>
     </application>
 
 </manifest>

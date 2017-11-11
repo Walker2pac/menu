@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 build();
         Realm.setDefaultConfiguration(realmConfiguration);
 
-        realm = Realm.getInstance(realmConfiguration);
+        realm = Realm.getDefaultInstance();
 
         //Загрузка данных в массив из локальной БД Realm
         menu = realm.where(Menu.class).findAll();

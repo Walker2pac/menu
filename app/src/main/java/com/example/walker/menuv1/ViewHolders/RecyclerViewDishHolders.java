@@ -1,12 +1,14 @@
 package com.example.walker.menuv1.ViewHolders;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.walker.menuv1.Activities.DishActivity;
 import com.example.walker.menuv1.R;
 
 /**
@@ -19,6 +21,8 @@ public class RecyclerViewDishHolders extends RecyclerView.ViewHolder implements 
     public TextView titleEng;
     public ImageView categoryImage;
     private Context context;
+
+    public static final String DISH_ID = "DISH_ID";
 
     public RecyclerViewDishHolders(View itemView) {
         super(itemView);
@@ -34,5 +38,8 @@ public class RecyclerViewDishHolders extends RecyclerView.ViewHolder implements 
     public void onClick(View view) {
         int itemViewPosition = getAdapterPosition();
         Toast.makeText(view.getContext(), "Clicked Dish Position = " + itemViewPosition, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(context, DishActivity.class);
+        intent.putExtra(DISH_ID, itemViewPosition);
+        context.startActivity(intent);
     }
 }

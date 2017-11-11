@@ -16,7 +16,6 @@ import com.example.walker.menuv1.R;
 import java.util.ArrayList;
 
 import io.realm.Realm;
-import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 
 import static com.example.walker.menuv1.Activities.DayCategoriesActivity.DEBUG;
@@ -34,7 +33,6 @@ public class NightCategoriesActivity extends Activity {
 
     private RealmResults<Category> categories;
     private Realm realm;
-    private RealmConfiguration realmConfiguration;
 
     public String status = "status";
 
@@ -44,14 +42,7 @@ public class NightCategoriesActivity extends Activity {
         setContentView(R.layout.activity_night_menu);
 
         //настройка REALM
-        Realm.init(getApplicationContext());
-        realmConfiguration = new RealmConfiguration.
-                Builder().
-                deleteRealmIfMigrationNeeded().
-                build();
-        Realm.setDefaultConfiguration(realmConfiguration);
-
-        realm = Realm.getInstance(realmConfiguration);
+        realm = Realm.getDefaultInstance();
 
         menuList = new ArrayList<>();
         categoryList = new ArrayList<>();

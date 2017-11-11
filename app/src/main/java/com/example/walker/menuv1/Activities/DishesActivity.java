@@ -16,7 +16,6 @@ import com.example.walker.menuv1.R;
 import java.util.ArrayList;
 
 import io.realm.Realm;
-import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 
 import static com.example.walker.menuv1.Activities.DayCategoriesActivity.DEBUG;
@@ -35,9 +34,8 @@ public class DishesActivity extends Activity {
     private GridLayoutManager lLayout;
     public static final String categoryIdField = "categoryId";
 
-    private RealmResults<Dish> dishes;
+    private static RealmResults<Dish> dishes;
     private Realm realm;
-    private RealmConfiguration realmConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +43,7 @@ public class DishesActivity extends Activity {
         setContentView(R.layout.activity_dishes);
 
         //настройка REALM
-        Realm.init(getApplicationContext());
-        realmConfiguration = new RealmConfiguration.
-                Builder().
-                deleteRealmIfMigrationNeeded().
-                build();
-        Realm.setDefaultConfiguration(realmConfiguration);
-
-        realm = Realm.getInstance(realmConfiguration);
+        realm = Realm.getDefaultInstance();
 
         menuList = new ArrayList<>();
         categoryList = new ArrayList<>();
@@ -84,6 +75,10 @@ public class DishesActivity extends Activity {
 
         RecyclerViewDishAdapter rcAdapter = new RecyclerViewDishAdapter(DishesActivity.this, dishes);
         rView.setAdapter(rcAdapter);
+    }
+
+    public static RealmResults<Dish> getDishes() {
+        return dishes;
     }
 
 }
