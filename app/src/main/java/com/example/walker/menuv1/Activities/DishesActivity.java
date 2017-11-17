@@ -1,19 +1,15 @@
 package com.example.walker.menuv1.Activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import com.example.walker.menuv1.Adapter.RecyclerViewDishAdapter;
-import com.example.walker.menuv1.Entity.Category;
 import com.example.walker.menuv1.Entity.Dish;
-import com.example.walker.menuv1.Entity.Menu;
 import com.example.walker.menuv1.R;
-
-import java.util.ArrayList;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -25,12 +21,8 @@ import static com.example.walker.menuv1.ViewHolders.RecyclerViewCategoryHolders.
  * Created by walker on 30.09.2017.
  */
 
-public class DishesActivity extends Activity {
+public class DishesActivity extends AppCompatActivity {
 
-
-    private ArrayList<Menu> menuList;
-    private ArrayList<Category> categoryList;
-    private ArrayList<Dish> dishList;
     private GridLayoutManager lLayout;
     public static final String categoryIdField = "categoryId";
 
@@ -44,10 +36,6 @@ public class DishesActivity extends Activity {
 
         //настройка REALM
         realm = Realm.getDefaultInstance();
-
-        menuList = new ArrayList<>();
-        categoryList = new ArrayList<>();
-        dishList = new ArrayList<>();
 
         lLayout = new GridLayoutManager(DishesActivity.this, 2);
 

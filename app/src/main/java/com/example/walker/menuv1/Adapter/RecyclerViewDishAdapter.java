@@ -14,7 +14,6 @@ import com.example.walker.menuv1.ViewHolders.RecyclerViewDishHolders;
 
 import java.util.List;
 
-import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
 import static com.example.walker.menuv1.Activities.DayCategoriesActivity.DEBUG;
 
 /**
@@ -32,7 +31,6 @@ public class RecyclerViewDishAdapter extends RecyclerView.Adapter<RecyclerViewDi
 
     @Override
     public RecyclerViewDishHolders onCreateViewHolder(ViewGroup parent, int viewType) {
-        Log.d(TAG, "onCreateViewHolder");
         View layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.category_view_list, null);
         RecyclerViewDishHolders rcv = new RecyclerViewDishHolders(layoutView);
         return rcv;
@@ -40,7 +38,6 @@ public class RecyclerViewDishAdapter extends RecyclerView.Adapter<RecyclerViewDi
 
     @Override
     public void onBindViewHolder(RecyclerViewDishHolders holder, int position) {
-        Log.d(TAG, "onBindViewHolder");
         holder.titleRu.setText(itemList.get(position).getTitleRu());
         holder.titleEng.setText(itemList.get(position).getTitleEng());
         Glide.with(context).load(itemList.get(position).getImgUrl()).into(holder.categoryImage);

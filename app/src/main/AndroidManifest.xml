@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/MenuTheme">
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,9 @@
         <activity android:name=".Activities.DayCategoriesActivity"></activity>
         <activity android:name=".Activities.NightCategoriesActivity"></activity>
         <activity android:name=".Activities.DishesActivity"></activity>
-        <activity android:name=".Activities.DishActivity"></activity>
+        <activity android:name=".Activities.DishActivity"
+            android:parentActivityName=".Activities.DishesActivity">
+        </activity>
     </application>
 
 </manifest>
