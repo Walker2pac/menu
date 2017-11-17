@@ -46,9 +46,7 @@ public class DayCategoriesActivity extends Activity {
         categoryList = new ArrayList<>();
         dishList = new ArrayList<>();
 
-        lLayout = new GridLayoutManager(DayCategoriesActivity.this, 4);
-
-        Log.d(DEBUG, "Я в onCreate");
+        lLayout = new GridLayoutManager(DayCategoriesActivity.this, 2);
 
         //Загрузка данных в массив из локальной БД Realm
         categories = realm.where(Category.class).equalTo(menu, 1).findAll();
@@ -58,7 +56,6 @@ public class DayCategoriesActivity extends Activity {
         и подставлять menuId в findALl Realm  */
 
         Log.d(DEBUG, "я после загрузки данных в массив из локальной БД");
-        Log.d(DEBUG, categories.get(0).getTitleRu() + "это titleRu");
         initRecyclerView();
 
     }

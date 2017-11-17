@@ -15,9 +15,10 @@
         <ImageView
             android:id="@+id/imageViewCategory"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="160dp"
             android:contentDescription="@string/action_settings"
             android:src="@drawable/three"
+            android:scaleType="fitXY"
              />
 
         <TextView
@@ -31,7 +32,6 @@
             android:layout_below="@+id/imageViewCategory"
             android:paddingBottom="8dp"
             android:paddingTop="8dp"
-
             android:background="@color/color_primary_dark"/>
         <!--
                 android:layout_alignParentBottom="true"

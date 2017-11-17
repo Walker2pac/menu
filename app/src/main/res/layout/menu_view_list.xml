@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/action_settings"
             android:src="@drawable/three"
-            android:scaleType="fitCenter" />
+            android:scaleType="fitXY" />
 
         <TextView
             android:id="@+id/textViewName"

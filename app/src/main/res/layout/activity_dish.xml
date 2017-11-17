@@ -25,9 +25,9 @@
     
     <ImageView
         android:id="@+id/dishImageView"
-        android:layout_width="match_parent"
+        android:layout_width="400dp"
         android:layout_height="400dp"
         android:layout_below="@id/textViewRu"
-        />
+        android:scaleType="fitXY" />
 
 </RelativeLayout>
